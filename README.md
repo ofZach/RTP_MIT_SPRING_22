@@ -1,2 +1,2 @@
-# RTP_MIT_SPRING_22
-Recreating the Past class (MAS.S66) taught at MIT / Spring 22
+# RTP_SFPC_F21
+RTP class at SFPC, Fall 2021
