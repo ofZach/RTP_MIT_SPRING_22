@@ -33,12 +33,21 @@ void ofApp::draw(){
 
     float time = ofGetElapsedTimef();
 
+    cout << pts.size() << endl;
+    
     for (int i = 0; i < pts.size(); i++){
 
-        
-        //ofDrawLine(pts[i],
-        //           pts[0]);
-        ofDrawSphere(pts[i], 10 );
+        history[i].addVertex(pts[i]);
+        for (int j = 0; j < history[i].size(); j++){
+            history[i][j].z -= 4;
+        }
+        if (history[i].size() > 80){
+            history[i].getVertices().erase(history[i].begin());
+        }
+        history[i].draw();
+//        ofDrawLine(pts[i],
+//                   pts[0]);
+        //ofDrawSphere(pts[i], 10 );
         
 //        float x = pts[i].x;
 //        float y = pts[i].y;

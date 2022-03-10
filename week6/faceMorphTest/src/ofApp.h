@@ -1,9 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
-#include "data.h"
-
-
+#include "ofxFaceTracker2.h"
+#include "ofxDelaunay.h"
 
 class ofApp : public ofBaseApp{
 
@@ -24,12 +23,23 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+    ofImage imgA;
+    ofImage imgB;
+    ofImage imgC;
     
-        ofEasyCam cam;
+    // 3 serate trackers
+    ofxFaceTracker2 tracker;
     
-        data walkData;
+    // delauny
+    ofxDelaunay delauny;
+    
+    // store the face points
+    vector < ofPoint > imgApts;
+    vector < ofPoint > imgBpts;
+    
+    
+    ofMesh baseMesh;
     
     
     
-     
 };
